@@ -275,7 +275,7 @@ const handleOptionToggle = (option) => {
           >
             <div className="flex items-center">
               <CoffeeIcon className="mr-2" />
-              <span>Buy Me a Coffee</span>
+              <span className="text-sm">Buy Me a Coffee</span>
             </div>
            
           </Button>
