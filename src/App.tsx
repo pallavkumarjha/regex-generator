@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Copy, Check, X, CoffeeIcon, AlertCircle } from 'lucide-react';
+import { Copy, Check, X, CoffeeIcon, AlertCircle, RefreshCcw } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/react"
 import OpenAI from 'openai'
 
@@ -157,10 +157,10 @@ const handleOptionToggle = (option) => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
+      <h1 className="text-3xl font-bold mt-12 text-center">Enhanced AI Regex Builder</h1>
+      <h4 className="text-m mt-4 text-center">Create powerful and precise regex patterns with ease and help of AI</h4>
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-xl shadow-lg p-8 max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6 text-center">Enhanced Regex Builder</h1>
-          
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-medium mb-2">
@@ -194,6 +194,16 @@ const handleOptionToggle = (option) => {
                 className="flex-1"
               >
                 {isLoading ? 'Generating...' : 'Generate Regex'}
+              </Button>
+              <Button
+                onClick={clearAll}
+                className="flex-9"
+              >
+                <div className="flex items-center">
+             
+                <RefreshCcw className='mr-2' height={16}/>
+                Clear
+            </div>
               </Button>
             </div>
 
@@ -246,19 +256,25 @@ const handleOptionToggle = (option) => {
             )}
           </div>
         </div>
+        <p className="mt-10 text-s text-gray-500 text-center">
+          Made with ❤️ and 🤖
+        </p>
       </main>
       <footer className="bg-gray-900 text-white mt-12">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <p className="text-sm">
-            &copy; 2024 Regex Builder. All rights reserved.
+            &copy; 2024 Regex Builder. No rights reserved.
           </p>
           <Button
             variant="ghost"
             onClick={() => window.open('https://buymeacoffee.com/pallavjha', '_blank')}
             className="text-white hover:text-yellow-400 transition-colors"
           >
-            <CoffeeIcon className="mr-2" />
-            Buy Me a Coffee
+            <div className="flex items-center">
+              <CoffeeIcon className="mr-2" />
+              <span>Buy Me a Coffee</span>
+            </div>
+           
           </Button>
         </div>
       </footer>
