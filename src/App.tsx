@@ -227,6 +227,9 @@ const handleOptionToggle = (option) => {
                   </Button>
                 </div>
                 <code className="block bg-white p-3 rounded-lg border break-all text-sm">{regex}</code>
+                <span className="mt-10 text-xs text-gray-500 text-center">
+                  If our regex concoction tastes weird, sprinkle some extra details above—AI's palette loves that!
+                </span>
               </div>
             )}
 
@@ -248,19 +251,19 @@ const handleOptionToggle = (option) => {
               />
             </div>
 
-            {isTestSuccess !== null && (
+            {testString && (
               <Alert variant={isTestSuccess ? "success" : "error"}>
                 <AlertCircle className="h-4 w-4 inline mr-2" />
-                {isTestSuccess ? 'Match found' : 'No match found'}
+                {isTestSuccess ? 'Match' : 'No match'}
               </Alert>
             )}
           </div>
         </div>
-        <p className="mt-10 text-s text-gray-500 text-center">
+        <p className="mt-4 text-s text-gray-500 text-center">
           Made with ❤️ and 🤖
         </p>
       </main>
-      <footer className="bg-gray-900 text-white mt-12">
+      <footer className="bg-gray-900 text-white mt-5">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <p className="text-sm">
             &copy; 2024 Regex Builder. No rights reserved.
